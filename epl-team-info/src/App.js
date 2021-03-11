@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Header from "./components/Header/Header";
 import ShowTeams from "./components/ShowTeams/ShowTeams";
 
 function App() {
@@ -20,8 +21,8 @@ function App() {
 
   // console.log(apiData);
   return (
-    <div>
-      <h3>This is broken</h3>
+    <div className="main">
+      <Header></Header>
       <ShowTeams teamList={apiData}></ShowTeams>
     </div>
   );

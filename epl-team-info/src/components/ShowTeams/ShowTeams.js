@@ -9,7 +9,7 @@ const ShowTeams = (props) => {
   // for rendering cards
   const renderCard = (cardInfo) => {
     return (
-      <Card style={{ width: "16rem" }}>
+      <Card className="text-center" style={{ width: "16rem" }}>
         <Card.Img
           className="img-thumbnail"
           variant="top"
@@ -26,9 +26,9 @@ const ShowTeams = (props) => {
   return (
     <div>
       <Container className="container-fluid">
-        <Row lg={4}>
+        <Row lg={4} sm={1}>
           {teams.map((team) => (
-            <Col className="ms-1 mt-2">{renderCard(team)}</Col>
+            <Col className="mx-auto mt-4">{renderCard(team)}</Col>
           ))}
         </Row>
       </Container>
