@@ -1,0 +1,84 @@
+/* reset default parameter */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 1rem;
+}
+
+/* individual card parameter - start */
+.card {
+  border: 0.1rem solid black;
+  border-radius: 0.7rem;
+  width: 18rem;
+}
+
+.card img {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 1rem;
+}
+
+.card > h3 {
+  text-align: center;
+}
+.card > button {
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  background-color: black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* individual card parameter - end */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 1.2rem;
+  grid-column-gap: 1.2rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+/* making the site responsive */
+@media (max-width: 576px) {
+  /* responsive container */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  /* responsive banner and text */
+  .banner-img {
+    background-image: url(./../../Images/Banner/bg-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 10rem;
+    background-color: black;
+  }
+  .banner-inner-txt {
+    text-align: center;
+    padding: 2rem;
+    font-weight: 400;
+    color: white;
+    font-size: 0.9rem;
+  }
+  /* responsive cards showcase section */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

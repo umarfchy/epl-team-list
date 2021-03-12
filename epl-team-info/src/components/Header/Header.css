@@ -1,11 +1,16 @@
-h1 {
+.leagueHeader {
   color: white;
   font-weight: bold;
   text-align: center;
   position: relative;
-  padding: 1.2rem;
+  padding: 7rem 3rem;
 }
 
-span {
-  color: rgb(255, 136, 0);
+.homeBannerImg {
+  background-image: url(./../../Images/Banner/bg-1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
 }

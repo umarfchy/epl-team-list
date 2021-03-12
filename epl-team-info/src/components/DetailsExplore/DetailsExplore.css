@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  padding: 1rem;
+}
+
+/* banner image */
+.banner-image {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.5)), url(./../../Images/Banner/bg-2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 20rem;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overBgImg {
+  height: 10rem;
+  width: 14rem;
+}
+
+/* team details area decoration */
+.teamDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 1.2rem;
+  grid-column-gap: 0.8rem;
+  margin-top: 1rem;
+  background: #3a42ff;
+  height: 20rem;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 0.5rem;
+}
+.teamInfo {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.teamInfo > p > span {
+  margin-right: 1.2rem;
+}
+
+.teamImg > img {
+  width: 70%;
+}
+
+.paraInfo {
+  font-size: 1.3rem;
+  text-align: justify;
+  padding: 2rem;
+  margin-top: 1.2rem;
+  background: rgb(231, 115, 70);
+  border-radius: 0.5rem;
+}
+
+.paraInfo > p {
+  margin-top: 1rem;
+  color: white;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.socialIcons > span {
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .banner-image {
+    height: 16rem;
+  }
+  .teamDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.8rem;
+    background: #3a42ff;
+    height: 30rem;
+    border-radius: 0.5rem;
+  }
+  .teamImg {
+    display: flex;
+    justify-content: center;
+  }
+  .teamImg img {
+    width: 90%;
+  }
+}

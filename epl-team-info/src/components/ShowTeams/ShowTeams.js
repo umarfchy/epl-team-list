@@ -1,37 +1,39 @@
 import React from "react";
 import "./ShowTeams.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, Button, Container, Row, Col } from "react-bootstrap";
+
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 
 const ShowTeams = (props) => {
-  const { teams } = props.teamList;
+  const history = useHistory();
+  const showTeamDetails = (teamId)=>{
+    const url = `teamDetails/${teamId}`
+    history.push(url);
+  }
 
-  // for rendering cards
-  const renderCard = (cardInfo) => {
-    return (
-      <Card className="text-center" style={{ width: "16rem" }}>
-        <Card.Img
-          className="img-thumbnail"
-          variant="top"
-          src={cardInfo.strTeamBadge}
-        />
-        <Card.Body>
-          <Card.Title>{cardInfo.strTeam}</Card.Title>
-          <Button variant="primary">Explore</Button>
-        </Card.Body>
-      </Card>
-    );
-  };
-
+  const renderCard = (teamName, teamPic, teamId) =>{
+    return(
+      <div className="card">
+        <img src={teamPic} alt="" /> 
+        <h3>{teamName}</h3> 
+        <button onClick = {()=>
+          showTeamDetails(teamId)
+        }>Explore</button>
+      </div>
+    )
+  }
+  console.log(props.team
+    )
   return (
     <div>
-      <Container className="container-fluid">
-        <Row lg={4} sm={1}>
-          {teams.map((team) => (
-            <Col className="mx-auto mt-4">{renderCard(team)}</Col>
-          ))}
-        </Row>
-      </Container>
+      
+      <div className='container'>
+      <div className='cards'>
+        {
+          props.team.map(team=>renderCard(team.strTeam,team.strTeamBadge, team.idTeam))
+          
+        }
+      </div>
+      </div>
     </div>
   );
 };

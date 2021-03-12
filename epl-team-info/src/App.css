@@ -2,11 +2,3 @@
   margin: 0;
   padding: 0;
 }
-
-.main {
-  background-image: url(./Images/Banner/bg-1.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
