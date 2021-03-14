@@ -21,11 +21,12 @@ import { Link } from "react-router-dom";
 
 const DetailsExplore = () => {
   const { id } = useParams();
-  const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${id}`
+  
 
   const [team, setTeam] = useState('')
   
   useEffect(()=>{
+    const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${id}`
     fetch(url)
     .then(res => res.json())
     .then(data => setTeam(data.teams[0]))
