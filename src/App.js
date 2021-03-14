@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-// import "./App.css";
+import "./App.css";
 import DetailsExplore from "./components/DetailsExplore/DetailsExplore";
 import Header from "./components/Header/Header";
 import ShowTeams from "./components/ShowTeams/ShowTeams";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NothingFound from "./components/NothingFound/NothingFound";
 
 
