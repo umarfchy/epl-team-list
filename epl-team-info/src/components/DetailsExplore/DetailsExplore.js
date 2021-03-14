@@ -23,13 +23,14 @@ const DetailsExplore = () => {
   const { id } = useParams();
   const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${id}`
 
-  const [team, setTeam] = useState('');
+  const [team, setTeam] = useState('')
   
   useEffect(()=>{
     fetch(url)
     .then(res => res.json())
     .then(data => setTeam(data.teams[0]))
   }, []);
+
 
 
   const teamBadge = team.strTeamBadge;
@@ -49,7 +50,8 @@ const DetailsExplore = () => {
         <img className="overBgImg" src={badge} alt='' />
       </div>
       <div className="detailShowcase">
-        <div className="teamDetails">
+        <div style= {gender === 'Male' ? {backgroundColor: '#3a42ff'} : {backgroundColor: '#fc4d57'}
+        } className="teamDetails">
           <div className="teamInfo">
             <h2>{name}</h2>
             <p>
@@ -78,7 +80,9 @@ const DetailsExplore = () => {
             </p>
           </div>
           <div className="teamImg">
-            <img src={maleImg} alt="" />
+            <img src={
+              gender === 'Male' ? maleImg : femaleImg
+              } alt="" />
           </div>
         </div>
         <div className="paraInfo">
