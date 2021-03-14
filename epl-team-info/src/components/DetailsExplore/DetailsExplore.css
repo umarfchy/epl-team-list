@@ -23,7 +23,7 @@
 
 .overBgImg {
   height: 10rem;
-  width: 14rem;
+  width: 10rem;
 }
 
 /* team details area decoration */
@@ -53,6 +53,11 @@
 
 .teamImg > img {
   width: 70%;
+  padding-top: 1.2rem;
+}
+
+.teamInfo > *{
+  margin-top: 1.2rem;
 }
 
 .paraInfo {
@@ -83,6 +88,11 @@
   cursor: pointer;
 }
 
+
+span > a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
 @media (max-width: 576px) {
   .banner-image {
     height: 16rem;
@@ -93,10 +103,9 @@
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
-    padding-top: 1rem;
     padding-bottom: 0.8rem;
     background: #3a42ff;
-    height: 30rem;
+    height: 34rem;
     border-radius: 0.5rem;
   }
   .teamImg {

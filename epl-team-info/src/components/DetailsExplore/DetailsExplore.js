@@ -17,12 +17,13 @@ import {
 import maleImg from "./../../Images/Gender/male.png";
 import femaleImg from "./../../Images/Gender/female.png";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 const DetailsExplore = () => {
   const { id } = useParams();
   const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${id}`
 
-  const [team, setTeam] = useState();
+  const [team, setTeam] = useState('');
   
   useEffect(()=>{
     fetch(url)
@@ -40,11 +41,6 @@ const DetailsExplore = () => {
   const teamFb = team.strFacebook
   const teamYoutube = team.strYoutube
   const teamTwitter = team.strTwitter
-
-  const urlOpener = url=>{
-    window.location.href(url);
-
-  }
 
   const renderDetails = (badge, name, founded,country, sportType, gender, fb, youtube, twitter) =>{
     return (
@@ -105,25 +101,31 @@ const DetailsExplore = () => {
             sequi modi.
           </p>
         </div>
+        <div>
+          <Link to='/'>
+          <h3 style={{textAlign:'center', margin:'1.2rem'}}>Home</h3>
+          </Link>
+        </div>
         <footer className="socialIcons">
-          <span onClick = {() => {urlOpener(fb)}} style={{ color: "#3b5998" }}>
-            <FontAwesomeIcon icon={faFacebookSquare} />
+          <span style={{ color: "#3b5998" }}>
+          <a href={'https://' + fb} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebookSquare} /></a>
           </span>
-          <span onClick = {() => {urlOpener(youtube)}} style={{ color: "#ff0000" }}>
-            <FontAwesomeIcon icon={faYoutubeSquare} />
+          <span style={{ color: "#ff0000" }}>
+          <a href={'https://' + youtube} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faYoutubeSquare} /></a>
           </span>
-          <span onClick = {() => {urlOpener(twitter)}} style={{ color: "#1da1f2" }}>
-            <FontAwesomeIcon icon={faTwitterSquare} />
-          </span>
+          <span style={{ color: "#1da1f2" }}>
+            <a href={'https://' + twitter} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faTwitterSquare} /></a>
+          </span> 
         </footer>
-      </div>
+      </div>  
     </div>
     );
   }
-
   return (
     <div>
-      {renderDetails( teamBadge, teamName , teamFounded, teamCountry, teamSportType,teamGender, teamFb, teamYoutube, teamTwitter)}
+      {renderDetails( teamBadge, teamName , teamFounded, teamCountry, teamSportType,teamGender, teamFb, teamYoutube, teamTwitter)
+      }
+      
     </div>
   );
 };

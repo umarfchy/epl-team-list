@@ -1,7 +1,6 @@
 import React from "react";
+import { useHistory } from "react-router";
 import "./ShowTeams.css";
-
-import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 
 const ShowTeams = (props) => {
   const history = useHistory();
@@ -10,6 +9,7 @@ const ShowTeams = (props) => {
     history.push(url);
   }
 
+  //individual card rendering function
   const renderCard = (teamName, teamPic, teamId) =>{
     return(
       <div className="card">
@@ -21,8 +21,6 @@ const ShowTeams = (props) => {
       </div>
     )
   }
-  console.log(props.team
-    )
   return (
     <div>
       
