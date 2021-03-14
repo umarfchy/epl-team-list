@@ -29,7 +29,7 @@ const DetailsExplore = () => {
     fetch(url)
     .then(res => res.json())
     .then(data => setTeam(data.teams[0]))
-  }, [id]);
+  }, [url]);
 
 
 
