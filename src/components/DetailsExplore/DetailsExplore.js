@@ -51,7 +51,7 @@ const DetailsExplore = () => {
         <img className="overBgImg" src={badge} alt='' />
       </div>
       <div className="detailShowcase">
-        <div style= {gender === 'Male' ? {backgroundColor: '#3a42ff'} : {backgroundColor: '#fc4d57'}
+        <div style= {gender === 'Female' ? {backgroundColor: '#fc4d57'} : {backgroundColor:'#3a42ff' }
         } className="teamDetails">
           <div className="teamInfo">
             <h2>{name}</h2>
@@ -82,7 +82,7 @@ const DetailsExplore = () => {
           </div>
           <div className="teamImg">
             <img src={
-              gender === 'Male' ? maleImg : femaleImg
+              gender === 'Female' ? femaleImg: maleImg 
               } alt="" />
           </div>
         </div>
